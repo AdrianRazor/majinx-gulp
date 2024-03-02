@@ -1,0 +1,23 @@
+:root {
+  --black: #000;
+  --grey: #999;
+  --light-2: #efefef;
+  --light: #f5f5f5;
+  --white: #fff;
+
+  --red: #da4546;
+  --red-light: rgb(218, 69, 70, 0.4);
+
+  --green: #9bf449;
+
+  --gradient: linear-gradient(90deg, #fff601 0%, #05c597 100%);
+  --gradient-reverse: linear-gradient(90deg, #05c597 0%, #fff500 100%);
+  --gradient-transparent: linear-gradient(
+    290deg,
+    rgba(5, 197, 151, 0.7) 0%,
+    rgba(255, 246, 1, 0.7) 100%
+  );
+
+  --radius: 20px;
+  --ease: 0.3s ease;
+}

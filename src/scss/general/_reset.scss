@@ -16,6 +16,14 @@ textarea {
   outline: none;
 }
 
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+  resize: none;
+}
+
 button {
   background-color: transparent;
   cursor: pointer;
@@ -33,15 +41,4 @@ a {
 ul,
 ol {
   list-style: none;
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-svg {
-  display: block;
 }

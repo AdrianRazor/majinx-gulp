@@ -1,0 +1,53 @@
+.talent {
+  margin: 60px 0;
+
+  &__wrapper {
+    padding: 80px;
+    border-radius: var(--radius);
+
+    border: 2px solid var(--light);
+  }
+
+  &__title {
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    span {
+      display: inline-block;
+    }
+
+    &--gradient {
+      background: var(--gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .talent {
+    &__wrapper {
+      padding: 30px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .talent {
+    margin: 80px 0;
+
+    &__title {
+      font-size: 40px;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 379px) {
+  .talent {
+    &__title {
+      font-size: 30px;
+    }
+  }
+}

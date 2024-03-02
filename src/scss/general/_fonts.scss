@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "New Order";
+  src: local("New-Order-Regular"), local("New Order Regular"),
+    local("NewOrderRegular"),
+    url("../fonts/New-Order-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Order";
+  src: local("New-Order-Medium"), local("New Order Medium"),
+    local("NewOrderMedium"),
+    url("../fonts/New-Order-Medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New Order";
+  src: local("New-Order-SemiBold"), local("New Order SemiBold"),
+    local("NewOrderSemiBold"),
+    url("../fonts/New-Order-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}

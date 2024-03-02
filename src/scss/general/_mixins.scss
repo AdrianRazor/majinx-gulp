@@ -1,0 +1,10 @@
+@mixin wrapper {
+  padding: 80px 100px;
+  border-radius: var(--radius);
+
+  background: var(--light);
+
+  @media (max-width: 1023px) {
+    padding: 40px 20px;
+  }
+}

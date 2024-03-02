@@ -1,0 +1,200 @@
+.form {
+  margin: 60px 0;
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__head {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--black);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    margin-top: 40px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  &__field {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__label {
+    line-height: 120%;
+  }
+
+  &__input {
+    padding: 18px 70px 18px 20px;
+    border-radius: var(--radius);
+
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 120%;
+    color: var(--black);
+
+    background: var(--white);
+    border: 2px solid var(--grey);
+
+    &--textarea {
+      height: 120px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: var(--grey);
+    }
+
+    &.valid {
+      border-color: var(--green);
+
+      & ~ .form__icon {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_126)'%3E%3Cpath d='M15 28.125C22.2487 28.125 28.125 22.2487 28.125 15C28.125 7.75126 22.2487 1.875 15 1.875C7.75126 1.875 1.875 7.75126 1.875 15C1.875 22.2487 7.75126 28.125 15 28.125Z' stroke='%239BF449' stroke-width='2' stroke-miterlimit='10'/%3E%3Cpath d='M7.8374 15L12.6124 19.775L22.1624 10.225' stroke='%239BF449' stroke-width='2' stroke-miterlimit='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_126'%3E%3Crect width='30' height='30' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      }
+    }
+
+    &.invalid {
+      border-color: var(--red-light);
+
+      & ~ .form__icon {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_133)'%3E%3Cpath d='M15 28.125C22.2487 28.125 28.125 22.2487 28.125 15C28.125 7.75126 22.2487 1.875 15 1.875C7.75126 1.875 1.875 7.75126 1.875 15C1.875 22.2487 7.75126 28.125 15 28.125Z' stroke='%23DA4546' stroke-width='2' stroke-miterlimit='10'/%3E%3Cpath d='M20.9626 9.03748L9.0376 20.9625' stroke='%23DA4546' stroke-width='2' stroke-miterlimit='10'/%3E%3Cpath d='M9.0376 9.03748L20.9626 20.9625' stroke='%23DA4546' stroke-width='2' stroke-miterlimit='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_133'%3E%3Crect width='30' height='30' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    z-index: 1;
+
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 242px;
+    height: 66px;
+    border-radius: var(--radius);
+
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    color: var(--black);
+    text-transform: uppercase;
+
+    &--gradient {
+      background: var(--gradient);
+    }
+
+    &--white {
+      color: var(--grey);
+      background: var(--white);
+    }
+
+    &--send {
+      height: 60px;
+      margin-top: 20px;
+
+      background: var(--gradient);
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .form {
+    &__body {
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    &__row {
+      grid-template-columns: initial;
+    }
+
+    &__field {
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .form {
+    margin: 40px 0;
+
+    &__label {
+      font-size: 14px;
+    }
+
+    &__input {
+      padding: 10px 30px 10px 10px;
+      border-radius: 10px;
+
+      font-size: 15px;
+
+      border-width: 1px;
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+
+    &__icon {
+      bottom: 11px;
+      right: 10px;
+
+      width: 20px;
+      height: 20px;
+    }
+
+    &__buttons {
+      gap: 10px;
+    }
+
+    &__btn {
+      width: 100%;
+      height: 40px;
+      border-radius: 10px;
+
+      font-weight: 600;
+      font-size: 15px;
+
+      &--send {
+        gap: 10px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

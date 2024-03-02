@@ -1,0 +1,51 @@
+.hero {
+  &__bg {
+    height: 440px;
+  }
+
+  &__wrapper {
+    padding: 124px 0 64px;
+  }
+
+  h1 {
+    font-size: 60px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-wrap: balance;
+
+    span {
+      display: block;
+
+      background: var(--gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    h1 {
+      font-size: 50px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    &__bg {
+      height: 257px;
+    }
+
+    &__wrapper {
+      padding: 60px 0 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      letter-spacing: initial;
+    }
+  }
+}

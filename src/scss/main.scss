@@ -1,17 +1,21 @@
-@import "utils/variables.scss";
-@import "utils/mixins.scss";
+@import "general/_reset";
+@import "general/_fonts";
+@import "general/_variables";
+@import "general/_mixins";
+@import "general/_global";
 
-@import "base/fonts.scss";
-@import "base/reset.scss";
-@import "base/global.scss";
+@import "base/btn.scss";
+@import "base/container.scss";
+@import "base/footer.scss";
+@import "base/header.scss";
+@import "base/main.scss";
+@import "base/logo.scss";
+@import "base/text.scss";
+@import "base/title.scss";
 
-@import "components/btn.scss";
-@import "components/container.scss";
-@import "components/footer.scss";
-@import "components/header.scss";
-@import "components/main.scss";
-@import "components/logo.scss";
-@import "components/text.scss";
-@import "components/title.scss";
-
-@import "blocks/start.scss";
+@import "blocks/hero.scss";
+@import "blocks/about.scss";
+@import "blocks/invest.scss";
+@import "blocks/talent.scss";
+@import "blocks/works.scss";
+@import "blocks/form.scss";
