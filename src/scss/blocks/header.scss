@@ -133,7 +133,20 @@
     }
 
     &__nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+
       display: none;
+
+      width: 100%;
+      height: calc(100dvh - 90px);
+      padding: 0 20px 20px;
+
+      background: var(--white);
+
+      overflow-y: auto;
     }
 
     &__burger {

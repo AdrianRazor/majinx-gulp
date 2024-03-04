@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   const root = document.documentElement;
 
+  // Header
   const header = document.querySelector(".header");
   const burger = document.querySelector(".burger");
 
