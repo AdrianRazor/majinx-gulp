@@ -5,13 +5,16 @@
 @import "general/_global";
 
 @import "base/btn.scss";
+@import "base/burger.scss";
 @import "base/container.scss";
-@import "base/footer.scss";
-@import "base/header.scss";
-@import "base/main.scss";
 @import "base/logo.scss";
 @import "base/text.scss";
 @import "base/title.scss";
+
+@import "blocks/header.scss";
+@import "blocks/nav.scss";
+@import "blocks/main.scss";
+@import "blocks/footer.scss";
 
 @import "blocks/hero.scss";
 @import "blocks/about.scss";

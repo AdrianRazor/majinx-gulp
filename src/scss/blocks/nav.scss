@@ -1,0 +1,159 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__item a {
+    position: relative;
+
+    padding: 5px;
+
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: var(--black);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+
+      display: block;
+      width: 0;
+      height: 1px;
+      margin: 0 auto;
+
+      background: var(--black);
+      transition: var(--ease);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__block {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+    height: calc(100dvh - 90px);
+    padding: 0 20px 20px;
+
+    background: var(--white);
+
+    overflow-y: auto;
+
+    &__list {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: initial;
+    }
+
+    &__item {
+      width: 100%;
+
+      a {
+        display: block;
+        padding: 25px 5px;
+
+        border-bottom: 1px solid var(--black);
+      }
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      margin-top: 30px;
+    }
+
+    &__buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    &__btn {
+      padding: 15px 20px;
+      border-radius: 10px;
+
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      color: var(--black);
+
+      background: var(--light);
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__label {
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    &__email {
+      font-weight: 600;
+      font-size: 30px;
+      color: var(--black);
+    }
+
+    &__links {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px 50px;
+    }
+
+    &__link a {
+      display: block;
+
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  .nav {
+    &__btn {
+      padding: 10px 15px;
+      font-size: 15px;
+    }
+
+    &__email {
+      font-size: 24px;
+    }
+
+    &__links {
+      gap: 10px 40px;
+    }
+  }
+}
