@@ -38,7 +38,10 @@ a {
   text-decoration: none;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
+}
+
+ol {
+  list-style-position: inside;
 }
