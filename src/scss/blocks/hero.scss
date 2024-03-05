@@ -44,6 +44,11 @@
     p > span {
       color: var(--grey);
     }
+
+    &--center {
+      text-align: center;
+      text-wrap: balance;
+    }
   }
 
   &__error {
