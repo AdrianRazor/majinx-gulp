@@ -37,5 +37,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
+  // Portfolio tabs
+  const tab = document.querySelectorAll(".portfolio__tab");
+
+  if (tab.length) {
+    tab.forEach((el) => {
+      el.addEventListener("click", () => {
+        tab.forEach((e) => e.classList.remove("active"));
+        el.classList.add("active");
+      });
+    });
+  }
+
   console.log("DOM fully loaded and parsed");
 });
