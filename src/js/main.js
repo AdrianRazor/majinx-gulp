@@ -37,6 +37,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
+  // Form
+  const raiseRadio = document.querySelectorAll(
+    "input[type='radio'][name='raise']"
+  );
+  const raiseInput = document.querySelector(".form__input--raise");
+
+  if (raiseRadio && raiseInput) {
+    raiseRadio.forEach((el) => {
+      el.addEventListener("click", () => {
+        el.id === "yes" && el.checked
+          ? raiseInput.classList.remove("hide")
+          : raiseInput.classList.add("hide");
+      });
+    });
+  }
+
   // Portfolio tabs
   const tab = document.querySelectorAll(".portfolio__tab");
 

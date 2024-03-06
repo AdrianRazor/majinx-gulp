@@ -383,11 +383,31 @@
                 <span class="form__icon"></span>
               </div>
 
-              <div class="form__field">
-                <p class="form__label">Did You Raise Before?</p>
-                <div class="form__buttons">
-                  <button class="btn btn--gradient"><span>yes</span></button>
-                  <button class="btn btn--white"><span>no</span></button>
+              <div class="form__row form__row--small">
+                <div class="form__field">
+                  <p class="form__label">Did You Raise Before?</p>
+                  <div class="form__buttons">
+                    <div class="form__radio">
+                      <input type="radio" name="raise" id="yes" />
+                      <label for="yes" class="btn btn--white">
+                        <span>yes</span>
+                      </label>
+                    </div>
+                    <div class="form__radio">
+                      <input type="radio" name="raise" id="no" checked />
+                      <label for="no" class="btn btn--white">
+                        <span>no</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form__field">
+                  <input
+                    id="total"
+                    class="form__input form__input--raise hide"
+                    placeholder="Total Raised, Stage"
+                  />
                 </div>
               </div>
 
