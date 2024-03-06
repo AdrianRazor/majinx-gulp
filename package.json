@@ -19,7 +19,6 @@
     "gulp-dart-sass": "^1.1.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "imagemin": "^7.0.1",
     "sass": "^1.62.0",
     "webpack": "^5.79.0",
     "webpack-stream": "^7.0.0"

@@ -95,37 +95,7 @@
   }
 
   &__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    width: 242px;
-    height: 66px;
-    border-radius: var(--radius);
-
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    color: var(--black);
-    text-transform: uppercase;
-
-    &--gradient {
-      background: var(--gradient);
-    }
-
-    &--white {
-      color: var(--grey);
-      background: var(--white);
-    }
-
-    &--send {
-      height: 60px;
-      margin-top: 20px;
-
-      background: var(--gradient);
-    }
+    margin-top: 20px;
   }
 }
 

@@ -49,5 +49,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
+  // ----- ANIMATIONS
+  // Form button
+  const formBtn = document.querySelector(".btn--send");
+
+  if (formBtn) {
+    formBtn.addEventListener("click", (e) => {
+      formBtn.classList.add("animation");
+
+      setTimeout(() => {
+        formBtn.classList.remove("animation");
+      }, 1500);
+    });
+  }
+
   console.log("DOM fully loaded and parsed");
 });
