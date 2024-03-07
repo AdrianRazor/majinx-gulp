@@ -18,12 +18,13 @@
     gap: 20px;
 
     height: 100%;
+    transition: var(--ease);
 
     &--min {
       position: fixed;
       top: 40px;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50px);
       z-index: 3;
 
       display: flex;
@@ -110,6 +111,22 @@
 
   &__burger {
     display: none;
+  }
+
+  &.min {
+    & .header {
+      &__wrapper {
+        transform: translateY(-100%);
+        visibility: hidden;
+        opacity: 0;
+
+        &--min {
+          transform: translate(-50%, 0);
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 

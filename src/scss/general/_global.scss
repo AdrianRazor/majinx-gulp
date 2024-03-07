@@ -16,6 +16,12 @@ body {
   font-weight: normal;
   font-size: 20px;
   color: var(--black);
+
+  overflow: hidden;
+
+  @media (max-width: 1023px) {
+    overflow: initial;
+  }
 }
 
 img,

@@ -1,3 +1,28 @@
 .main {
+  width: 100%;
+  height: 100dvh;
+
   overflow: hidden;
+
+  &__fullpage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transition: transform 0.6s ease;
+  }
+}
+
+@media (max-width: 1279px) {
+  .main {
+    width: initial;
+    height: initial;
+
+    &__fullpage {
+      position: static;
+      z-index: initial;
+    }
+  }
 }
