@@ -89,6 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
 
   if (fullpage && sections.length) {
+    const talent = document.querySelector(".talent");
+
     let page = fullpage.offsetHeight;
     let vh = window.innerHeight;
 
@@ -129,6 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
         activeSection > 0 && activeSection < sections.length - 1
           ? main.classList.add("gradient")
           : main.classList.remove("gradient");
+
+        activeSection === 3 && talent
+          ? talent.classList.add("animation")
+          : talent.classList.remove("animation");
 
         // Set styles
         fullpage.style.transition = `${speed}s ease`;
