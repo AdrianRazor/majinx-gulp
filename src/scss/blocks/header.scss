@@ -176,6 +176,16 @@
       display: block;
     }
 
+    &.min {
+      & .header {
+        &__wrapper {
+          transform: none;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
     &.open {
       position: fixed;
       background: var(--white);

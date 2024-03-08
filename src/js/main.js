@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----- ANIMATIONS
   gsap.registerPlugin(ScrollTrigger);
 
+  const main = document.querySelector(".main");
   const fullpage = document.querySelector(".main__fullpage");
   const sections = document.querySelectorAll(".section");
 
@@ -124,6 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // When scrolled down
         if (translateY > page - vh) translateY = page - vh;
+
+        activeSection > 0 && activeSection < sections.length - 1
+          ? main.classList.add("gradient")
+          : main.classList.remove("gradient");
 
         // Set styles
         fullpage.style.transition = `${speed}s ease`;
