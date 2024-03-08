@@ -91,6 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (fullpage && sections.length) {
     const talent = document.querySelector(".talent");
 
+    document.body.style.overflow =
+      window.innerWidth >= 1280 ? "hidden" : "initial";
+
     let page = fullpage.offsetHeight;
     let vh = window.innerHeight;
 
@@ -205,16 +208,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let resizeTimeout;
 
     // Resize
-    function handleResize() {
-      clearTimeout(resizeTimeout);
+    // function handleResize() {
+    //   clearTimeout(resizeTimeout);
 
-      resizeTimeout = setTimeout(() => {
-        window.scrollTo(0, 0);
-        activeSection = 0;
-        translateY = 0;
-      }, 300);
-    }
+    //   resizeTimeout = setTimeout(() => {
+    //     location.reload();
+    //     window.scrollTo(0, 0);
+    //     activeSection = 0;
+    //     translateY = 0;
+    //   }, 300);
+    // }
 
-    window.addEventListener("resize", handleResize);
+    // window.addEventListener("resize", handleResize);
   }
 });
