@@ -88,29 +88,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
 
   if (fullpage && sections.length) {
+    let page = fullpage.offsetHeight;
+    let vh = window.innerHeight;
+
     let offsets = [];
     let activeSection = 0;
     let translateY = 0;
     let speed = 0.6;
     let isScroll = false;
 
-    sections.forEach((section, i) => {
-      // gsap.to(section, {
-      //   scrollTrigger: {
-      //     trigger: section,
-      //     start: "top center",
-      //     end: "bottom center",
-      //     toggleActions: "play none none reverse",
-      //   },
-      //   y: "50%",
-      //   opacity: 1,
-      //   duration: 0.6,
-      //   ease: "power2.inOut",
-      // });
-
+    // Create array with section offsets
+    sections.forEach((section) => {
       const y = section.offsetTop;
       const height = section.offsetHeight;
-      const offsetY = (window.innerHeight - height) / 2;
+      const offsetY = (vh - height) / 2;
 
       const result = y === 0 ? 0 : offsetY < 150 ? y - 150 : y - offsetY;
 
@@ -120,85 +111,99 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    console.log("offsets", offsets);
-
-    document.addEventListener("wheel", (e) => {
+    function handleScroll(e) {
       if (!isScroll) {
         isScroll = true;
 
-        if (offsets[activeSection].isOverflow) {
-          if (e.deltaY > 0) {
-            console.log("overflow down");
+        // Scroll
+        offsets[activeSection].isOverflow
+          ? e.deltaY > 0
+            ? scrollDown()
+            : scrollUp()
+          : scrollScreen(e);
 
-            if (
-              sections[activeSection + 1] &&
-              translateY + window.innerHeight >
-                sections[activeSection + 1].offsetTop
-            ) {
-              if (activeSection < offsets.length - 1) activeSection++;
-              translateY = offsets[activeSection].offset;
-              speed = 0.6;
-            } else {
-              translateY =
-                translateY >= fullpage.offsetHeight - window.innerHeight
-                  ? fullpage.offsetHeight - window.innerHeight
-                  : translateY + 100;
-              speed = 0.001;
-            }
-          } else {
-            console.log("overflow up");
+        // When scrolled down
+        if (translateY > page - vh) translateY = page - vh;
 
-            if (offsets[activeSection].offset >= translateY) {
-              if (activeSection > 0) activeSection--;
-              translateY = offsets[activeSection].offset;
-              speed = 0.6;
-            } else {
-              translateY = translateY <= 0 ? 0 : translateY - 100;
-              speed = 0.001;
-            }
-
-            console.log("offset", offsets[activeSection].offset);
-            console.log("translateY", translateY);
-          }
-        } else {
-          if (e.deltaY > 0) {
-            console.log("not overflow down");
-
-            if (activeSection < offsets.length - 1) activeSection++;
-            speed = 0.6;
-          } else {
-            console.log("not overflow up");
-
-            if (activeSection > 0) activeSection--;
-            speed = 0.6;
-          }
-
-          translateY = offsets[activeSection].offset;
-        }
-
+        // Set styles
         fullpage.style.transition = `${speed}s ease`;
         fullpage.style.transform = `translateY(-${translateY}px)`;
 
-        // if (true) {
-        //   const style = window.getComputedStyle(fullpage);
-        //   const matrix = new WebKitCSSMatrix(style.transform);
-        //   const currentOffsaetY = matrix.m42;
-        //   let newOffsetY = Math.abs(currentOffsaetY - 100);
-        //   if (e.deltaY < 0) {
-        //     newOffsetY = Math.abs(currentOffsaetY + 100);
-        //   }
-        //   fullpage.style.transform = `translateY(-${newOffsetY}px)`;
-        // } else {
-        // }
-
+        // Header minimal
         activeSection
           ? header.classList.add("min")
           : header.classList.remove("min");
 
+        // Enable scroll after X miliseconds
         setTimeout(() => {
           isScroll = false;
-        }, speed * 1000);
+        }, speed * 500);
       }
-    });
+    }
+
+    function scrollScreen(e) {
+      if (e.deltaY > 0) {
+        if (activeSection < offsets.length - 1) activeSection++;
+      } else {
+        if (activeSection > 0) activeSection--;
+      }
+
+      translateY = offsets[activeSection].offset;
+    }
+
+    function scrollUp() {
+      if (offsets[activeSection].offset >= translateY) {
+        if (activeSection > 0) activeSection--;
+        translateY = offsets[activeSection].offset;
+      } else {
+        translateY = translateY <= 0 ? 0 : translateY - 200;
+      }
+    }
+
+    function scrollDown() {
+      const next = sections[activeSection + 1];
+
+      if (next && translateY + vh > next.offsetTop) {
+        console.log("section down");
+        if (activeSection < offsets.length - 1) activeSection++;
+        translateY = offsets[activeSection].offset;
+      } else {
+        console.log("scroll down");
+        translateY = translateY >= page - vh ? page - vh : translateY + 200;
+      }
+    }
+
+    // Footer button "go up"
+    const goUpBtn = document.querySelector("#goUp");
+
+    if (goUpBtn && window.innerWidth >= 1280) {
+      goUpBtn.addEventListener("click", () => {
+        activeSection = 0;
+        translateY = 0;
+
+        fullpage.style.transform = "translateY(0)";
+        header.classList.remove("min");
+      });
+    }
+
+    // Mouse scroll on desktop
+    window.innerWidth >= 1280
+      ? document.addEventListener("wheel", handleScroll)
+      : document.removeEventListener("wheel", handleScroll);
+
+    let resizeTimeout;
+
+    // Resize
+    function handleResize() {
+      clearTimeout(resizeTimeout);
+
+      resizeTimeout = setTimeout(() => {
+        window.scrollTo(0, 0);
+        activeSection = 0;
+        translateY = 0;
+      }, 300);
+    }
+
+    window.addEventListener("resize", handleResize);
   }
 });

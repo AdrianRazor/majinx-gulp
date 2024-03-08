@@ -4,6 +4,11 @@
     <path d="M13 1L1 13" stroke="currentColor" stroke-width="2"/>
   </symbol>
 
+  <symbol id="arrowUp" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 30L30.2132 8.7868L51.4264 30" stroke="currentColor" stroke-width="4"/>
+    <path d="M30.5 10V52" stroke="currentColor" stroke-width="4"/>
+  </symbol>
+
   <symbol id="valid" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M15 28.125C22.2487 28.125 28.125 22.2487 28.125 15C28.125 7.75126 22.2487 1.875 15 1.875C7.75126 1.875 1.875 7.75126 1.875 15C1.875 22.2487 7.75126 28.125 15 28.125Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
     <path d="M7.8374 15L12.6124 19.775L22.1624 10.225" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>

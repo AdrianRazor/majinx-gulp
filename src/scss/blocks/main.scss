@@ -23,6 +23,8 @@
     &__fullpage {
       position: static;
       z-index: initial;
+
+      transform: none !important;
     }
   }
 }

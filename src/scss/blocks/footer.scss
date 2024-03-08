@@ -12,6 +12,39 @@
     width: 100%;
     height: 100%;
   }
+
+  &__btn {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    padding: 20px;
+    border-radius: 0 0 100px 100px;
+
+    background: var(--white);
+
+    svg {
+      transition: var(--ease);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        svg {
+          transform: translateY(-10px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .footer {
+    &__btn {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 767px) {
