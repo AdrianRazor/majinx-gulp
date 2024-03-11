@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (local) {
-      fullpage.style.transform = `translateY(-${offsets[activeSection].offset}px)`;
+      translateY = offsets[activeSection].offset;
+      fullpage.style.transform = `translateY(-${translateY}px)`;
+
       window.localStorage.clear();
     }
 
@@ -132,6 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
     window.innerWidth >= 1280
       ? document.addEventListener("wheel", handleScroll)
       : document.removeEventListener("wheel", handleScroll);
+
+    console.log("offsets", offsets);
+    console.log("activeSection", activeSection);
+    console.log("translateY", translateY);
 
     // let resizeTimeout;
 
