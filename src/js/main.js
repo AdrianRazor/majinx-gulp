@@ -134,26 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.innerWidth >= 1280
       ? document.addEventListener("wheel", handleScroll)
       : document.removeEventListener("wheel", handleScroll);
-
-    console.log("offsets", offsets);
-    console.log("activeSection", activeSection);
-    console.log("translateY", translateY);
-
-    // let resizeTimeout;
-
-    // Resize
-    // function handleResize() {
-    //   clearTimeout(resizeTimeout);
-
-    //   resizeTimeout = setTimeout(() => {
-    //     location.reload();
-    //     window.scrollTo(0, 0);
-    //     activeSection = 0;
-    //     translateY = 0;
-    //   }, 300);
-    // }
-
-    // window.addEventListener("resize", handleResize);
   }
 
   // ----- LOGIC
