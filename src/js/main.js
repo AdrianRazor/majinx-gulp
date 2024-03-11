@@ -4,83 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.documentElement;
 
-  // Header
-  const header = document.querySelector(".header");
-  const burger = document.querySelector(".burger");
-
-  if (header && burger) {
-    burger.addEventListener("click", () => {
-      header.classList.toggle("open");
-      burger.classList.toggle("open");
-      root.classList.toggle("lock");
-    });
-  }
-
-  // Modal contact
-  const contactBtn = document.querySelectorAll(".openModal");
-  const modal = document.querySelector(".modal");
-
-  if (contactBtn.length && modal) {
-    contactBtn.forEach((el) => {
-      el.addEventListener("click", () => {
-        modal.classList.add("open");
-      });
-    });
-
-    const closeBtn = modal.querySelector(".modal__close");
-
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("open");
-    });
-
-    window.addEventListener("click", (event) => {
-      if (event.target.classList.contains("modal")) {
-        modal.classList.remove("open");
-      }
-    });
-  }
-
-  // Form
-  const raiseRadio = document.querySelectorAll(
-    "input[type='radio'][name='raise']"
-  );
-  const raiseInput = document.querySelector(".form__input--raise");
-
-  if (raiseRadio && raiseInput) {
-    raiseRadio.forEach((el) => {
-      el.addEventListener("click", () => {
-        el.id === "yes" && el.checked
-          ? raiseInput.classList.remove("hide")
-          : raiseInput.classList.add("hide");
-      });
-    });
-  }
-
-  // Form button
-  const formBtn = document.querySelector(".btn--send");
-
-  if (formBtn) {
-    formBtn.addEventListener("click", (e) => {
-      formBtn.classList.add("animation");
-
-      setTimeout(() => {
-        formBtn.classList.remove("animation");
-      }, 1500);
-    });
-  }
-
-  // Portfolio tabs
-  const tab = document.querySelectorAll(".portfolio__tab");
-
-  if (tab.length) {
-    tab.forEach((el) => {
-      el.addEventListener("click", () => {
-        tab.forEach((e) => e.classList.remove("active"));
-        el.classList.add("active");
-      });
-    });
-  }
-
   // ----- ANIMATIONS
   gsap.registerPlugin(ScrollTrigger);
 
@@ -88,20 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const fullpage = document.querySelector(".main__fullpage");
   const sections = document.querySelectorAll(".section");
 
+  let offsets = [];
+  let activeSection = 0;
+  let translateY = 0;
+  let speed = 0.6;
+  let isScroll = false;
+
   if (fullpage && sections.length) {
     const talent = document.querySelector(".talent");
-
-    document.body.style.overflow =
-      window.innerWidth >= 1280 ? "hidden" : "initial";
 
     let page = fullpage.offsetHeight;
     let vh = window.innerHeight;
 
-    let offsets = [];
-    let activeSection = 0;
-    let translateY = 0;
-    let speed = 0.6;
-    let isScroll = false;
+    document.body.style.overflow =
+      window.innerWidth >= 1280 ? "hidden" : "initial";
 
     // Create array with section offsets
     sections.forEach((section) => {
@@ -220,5 +143,103 @@ document.addEventListener("DOMContentLoaded", function () {
     // }
 
     // window.addEventListener("resize", handleResize);
+  }
+
+  // ----- LOGIC
+  // Header
+  const header = document.querySelector(".header");
+  const burger = document.querySelector(".burger");
+
+  if (header && burger) {
+    burger.addEventListener("click", () => {
+      header.classList.toggle("open");
+      burger.classList.toggle("open");
+      root.classList.toggle("lock");
+    });
+  }
+
+  // Apply link
+  const applyLink = document.querySelector("#applyLink");
+
+  if (applyLink && window.innerWidth >= 1280) {
+    applyLink.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      if (window.location.pathname !== "/") window.location.href = "/";
+
+      activeSection = 5;
+      translateY = offsets[activeSection].offset;
+      if (fullpage) fullpage.style.transform = `translateY(-${translateY}px)`;
+    });
+  }
+
+  // Video
+  const videos = document.querySelectorAll(".video");
+
+  if (videos) videos.forEach((el) => el.play());
+
+  // Modal contact
+  const contactBtn = document.querySelectorAll(".openModal");
+  const modal = document.querySelector(".modal");
+
+  if (contactBtn.length && modal) {
+    contactBtn.forEach((el) => {
+      el.addEventListener("click", () => {
+        modal.classList.add("open");
+      });
+    });
+
+    const closeBtn = modal.querySelector(".modal__close");
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("open");
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target.classList.contains("modal")) {
+        modal.classList.remove("open");
+      }
+    });
+  }
+
+  // Form
+  const raiseRadio = document.querySelectorAll(
+    "input[type='radio'][name='raise']"
+  );
+  const raiseInput = document.querySelector(".form__input--raise");
+
+  if (raiseRadio && raiseInput) {
+    raiseRadio.forEach((el) => {
+      el.addEventListener("click", () => {
+        el.id === "yes" && el.checked
+          ? raiseInput.classList.remove("hide")
+          : raiseInput.classList.add("hide");
+      });
+    });
+  }
+
+  // Form button
+  const formBtn = document.querySelector(".btn--send");
+
+  if (formBtn) {
+    formBtn.addEventListener("click", (e) => {
+      formBtn.classList.add("animation");
+
+      setTimeout(() => {
+        formBtn.classList.remove("animation");
+      }, 1500);
+    });
+  }
+
+  // Portfolio tabs
+  const tab = document.querySelectorAll(".portfolio__tab");
+
+  if (tab.length) {
+    tab.forEach((el) => {
+      el.addEventListener("click", () => {
+        tab.forEach((e) => e.classList.remove("active"));
+        el.classList.add("active");
+      });
+    });
   }
 });
