@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const fullpage = document.querySelector(".main__fullpage");
   const sections = document.querySelectorAll(".section");
 
+  const local = window.localStorage.getItem("activeSection");
+
   let offsets = [];
-  let activeSection = 0;
+  let activeSection = local || 0;
   let translateY = 0;
   let speed = 0.6;
   let isScroll = false;
@@ -39,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
         isOverflow: offsetY < 150,
       });
     });
+
+    if (local) {
+      fullpage.style.transform = `translateY(-${offsets[activeSection].offset}px)`;
+      window.localStorage.clear();
+    }
 
     function handleScroll(e) {
       if (!isScroll) {
@@ -101,11 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const next = sections[activeSection + 1];
 
       if (next && translateY + vh > next.offsetTop) {
-        console.log("section down");
         if (activeSection < offsets.length - 1) activeSection++;
         translateY = offsets[activeSection].offset;
       } else {
-        console.log("scroll down");
         translateY = translateY >= page - vh ? page - vh : translateY + 200;
       }
     }
@@ -128,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ? document.addEventListener("wheel", handleScroll)
       : document.removeEventListener("wheel", handleScroll);
 
-    let resizeTimeout;
+    // let resizeTimeout;
 
     // Resize
     // function handleResize() {
@@ -165,11 +170,15 @@ document.addEventListener("DOMContentLoaded", function () {
     applyLink.addEventListener("click", (e) => {
       e.preventDefault();
 
-      if (window.location.pathname !== "/") window.location.href = "/";
+      if (window.location.pathname !== "/") {
+        window.localStorage.setItem("activeSection", 5);
+        window.location.href = "/";
+      } else {
+        activeSection = 5;
+        translateY = offsets[activeSection].offset;
 
-      activeSection = 5;
-      translateY = offsets[activeSection].offset;
-      if (fullpage) fullpage.style.transform = `translateY(-${translateY}px)`;
+        fullpage.style.transform = `translateY(-${translateY}px)`;
+      }
     });
   }
 
