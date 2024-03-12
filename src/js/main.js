@@ -7,181 +7,133 @@ document.addEventListener("DOMContentLoaded", function () {
   // ----- ANIMATIONS
   gsap.registerPlugin(ScrollTrigger);
 
-  // let isScrollLocked = false;
+  const main = document.querySelector(".main");
+  const fullpage = document.querySelector(".main__fullpage");
+  const sections = document.querySelectorAll(".section");
 
-  // // Debounce function to limit the frequency of scroll events
-  // function debounce(func, delay) {
-  //   let timeout;
-  //   return function () {
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(() => {
-  //       func.apply(this, arguments);
-  //     }, delay);
-  //   };
-  // }
+  const local = window.localStorage.getItem("activeSection");
 
-  // // Function to be executed on scroll
-  // function handleScroll(e) {
-  //   if (isScrollLocked) return;
+  let offsets = [];
+  let activeSection = local || 0;
+  let translateY = 0;
+  let speed = 0.6;
+  let isScrollLocked = false;
 
-  //   // Lock the scroll
-  //   isScrollLocked = true;
+  if (fullpage && sections.length) {
+    const talent = document.querySelector(".talent");
 
-  //   // Your scroll-related code goes here
-  //   console.log("e", e);
+    let page = fullpage.offsetHeight;
+    let vh = window.innerHeight;
 
-  //   // Set a timeout to unlock the scroll after 500 milliseconds (adjust as needed)
-  //   setTimeout(() => {
-  //     isScrollLocked = false;
-  //   }, 500);
-  // }
+    document.body.style.overflow =
+      window.innerWidth >= 1280 ? "hidden" : "initial";
 
-  // window.addEventListener("scroll", debounce(handleScroll, 100)); // Adjust the debounce delay as needed
+    // Create array with section offsets
+    sections.forEach((section) => {
+      const y = section.offsetTop;
+      const height = section.offsetHeight;
+      const offsetY = (vh - height) / 2;
 
-  // const main = document.querySelector(".main");
-  // const fullpage = document.querySelector(".main__fullpage");
-  // const sections = document.querySelectorAll(".section");
+      const result = y === 0 ? 0 : offsetY < 150 ? y - 150 : y - offsetY;
 
-  // const local = window.localStorage.getItem("activeSection");
+      offsets.push({
+        offset: result,
+        isOverflow: offsetY < 150,
+      });
+    });
 
-  // let offsets = [];
-  // let activeSection = local || 0;
-  // let translateY = 0;
-  // let speed = 0.6;
-  // let isScrollLocked = false;
+    if (local) {
+      translateY = offsets[activeSection].offset;
+      fullpage.style.transform = `translateY(-${translateY}px)`;
 
-  // function debounce(func, delay) {
-  //   let timeout;
+      window.localStorage.clear();
+    }
 
-  //   return function () {
-  //     console.log("test");
-  //     clearTimeout(timeout);
-  //     console.log("func", func);
-  //     timeout = setTimeout(() => {
-  //       func.apply(this, arguments);
-  //     }, delay);
-  //     console.log("a timeout", timeout);
-  //   };
-  // }
+    function handleScroll(e) {
+      if (isScrollLocked) return;
 
-  // if (fullpage && sections.length) {
-  //   const talent = document.querySelector(".talent");
+      isScrollLocked = true;
 
-  //   let page = fullpage.offsetHeight;
-  //   let vh = window.innerHeight;
+      // Scroll
+      offsets[activeSection].isOverflow
+        ? e.deltaY > 0
+          ? scrollDown()
+          : scrollUp()
+        : scrollScreen(e);
 
-  //   document.body.style.overflow =
-  //     window.innerWidth >= 1280 ? "hidden" : "initial";
+      // When scrolled down
+      if (translateY > page - vh) translateY = page - vh;
 
-  //   // Create array with section offsets
-  //   sections.forEach((section) => {
-  //     const y = section.offsetTop;
-  //     const height = section.offsetHeight;
-  //     const offsetY = (vh - height) / 2;
+      activeSection > 0 && activeSection < sections.length - 1
+        ? main.classList.add("gradient")
+        : main.classList.remove("gradient");
 
-  //     const result = y === 0 ? 0 : offsetY < 150 ? y - 150 : y - offsetY;
+      activeSection === 3 && talent
+        ? talent.classList.add("animation")
+        : talent.classList.remove("animation");
 
-  //     offsets.push({
-  //       offset: result,
-  //       isOverflow: offsetY < 150,
-  //     });
-  //   });
+      // Set styles
+      fullpage.style.transition = `${speed}s ease`;
+      fullpage.style.transform = `translateY(-${translateY}px)`;
 
-  //   if (local) {
-  //     translateY = offsets[activeSection].offset;
-  //     fullpage.style.transform = `translateY(-${translateY}px)`;
+      // Header minimal
+      activeSection
+        ? header.classList.add("min")
+        : header.classList.remove("min");
 
-  //     window.localStorage.clear();
-  //   }
+      setTimeout(() => {
+        isScrollLocked = false;
+      }, speed * 500);
+    }
 
-  //   function handleScroll(e) {
-  //     console.log("handleScroll");
-  //     if (isScrollLocked) return;
+    function scrollScreen(e) {
+      if (e.deltaY > 0) {
+        if (activeSection < offsets.length - 1) activeSection++;
+      } else {
+        if (activeSection > 0) activeSection--;
+      }
 
-  //     isScrollLocked = true;
+      translateY = offsets[activeSection].offset;
+    }
 
-  //     // Scroll
-  //     offsets[activeSection].isOverflow
-  //       ? e.deltaY > 0
-  //         ? scrollDown()
-  //         : scrollUp()
-  //       : scrollScreen(e);
+    function scrollUp() {
+      if (offsets[activeSection].offset >= translateY) {
+        if (activeSection > 0) activeSection--;
+        translateY = offsets[activeSection].offset;
+      } else {
+        translateY = translateY <= 0 ? 0 : translateY - 200;
+      }
+    }
 
-  //     // When scrolled down
-  //     if (translateY > page - vh) translateY = page - vh;
+    function scrollDown() {
+      const next = sections[activeSection + 1];
 
-  //     activeSection > 0 && activeSection < sections.length - 1
-  //       ? main.classList.add("gradient")
-  //       : main.classList.remove("gradient");
+      if (next && translateY + vh > next.offsetTop) {
+        if (activeSection < offsets.length - 1) activeSection++;
+        translateY = offsets[activeSection].offset;
+      } else {
+        translateY = translateY >= page - vh ? page - vh : translateY + 200;
+      }
+    }
 
-  //     activeSection === 3 && talent
-  //       ? talent.classList.add("animation")
-  //       : talent.classList.remove("animation");
+    // Footer button "go up"
+    const goUpBtn = document.querySelector("#goUp");
 
-  //     // Set styles
-  //     fullpage.style.transition = `${speed}s ease`;
-  //     fullpage.style.transform = `translateY(-${translateY}px)`;
+    if (goUpBtn && window.innerWidth >= 1280) {
+      goUpBtn.addEventListener("click", () => {
+        activeSection = 0;
+        translateY = 0;
 
-  //     // Header minimal
-  //     activeSection
-  //       ? header.classList.add("min")
-  //       : header.classList.remove("min");
+        fullpage.style.transform = "translateY(0)";
+        header.classList.remove("min");
+      });
+    }
 
-  //     // Enable scroll after X miliseconds
-  //     setTimeout(() => {
-  //       console.log("setTimeout");
-  //       isScrollLocked = false;
-  //     }, 500);
-  //   }
-
-  //   function scrollScreen(e) {
-  //     if (e.deltaY > 0) {
-  //       if (activeSection < offsets.length - 1) activeSection++;
-  //     } else {
-  //       if (activeSection > 0) activeSection--;
-  //     }
-
-  //     translateY = offsets[activeSection].offset;
-  //   }
-
-  //   function scrollUp() {
-  //     if (offsets[activeSection].offset >= translateY) {
-  //       if (activeSection > 0) activeSection--;
-  //       translateY = offsets[activeSection].offset;
-  //     } else {
-  //       translateY = translateY <= 0 ? 0 : translateY - 200;
-  //     }
-  //   }
-
-  //   function scrollDown() {
-  //     const next = sections[activeSection + 1];
-
-  //     if (next && translateY + vh > next.offsetTop) {
-  //       if (activeSection < offsets.length - 1) activeSection++;
-  //       translateY = offsets[activeSection].offset;
-  //     } else {
-  //       translateY = translateY >= page - vh ? page - vh : translateY + 200;
-  //     }
-  //   }
-
-  //   // Footer button "go up"
-  //   const goUpBtn = document.querySelector("#goUp");
-
-  //   if (goUpBtn && window.innerWidth >= 1280) {
-  //     goUpBtn.addEventListener("click", () => {
-  //       activeSection = 0;
-  //       translateY = 0;
-
-  //       fullpage.style.transform = "translateY(0)";
-  //       header.classList.remove("min");
-  //     });
-  //   }
-
-  //   // Mouse scroll on desktop
-  //   window.innerWidth >= 1280
-  //     ? window.addEventListener("wheel", debounce(handleScroll, 300)())
-  //     : window.removeEventListener("wheel", debounce(handleScroll, 300)());
-  // }
+    // Mouse scroll on desktop
+    window.innerWidth >= 1280
+      ? window.addEventListener("wheel", handleScroll)
+      : window.removeEventListener("wheel", handleScroll);
+  }
 
   // ----- LOGIC
   // Header
@@ -216,9 +168,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Video
-  // const videos = document.querySelectorAll(".video");
+  const videos = document.querySelectorAll(".video");
 
-  // if (videos) videos.forEach((el) => el.play());
+  if (videos) videos.forEach((el) => el.play());
 
   // Modal contact
   const contactBtn = document.querySelectorAll(".openModal");
