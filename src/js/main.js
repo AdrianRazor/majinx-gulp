@@ -168,9 +168,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Video
-  const videos = document.querySelectorAll(".video");
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    let firstTouch = true;
 
-  if (videos) videos.forEach((el) => el.play());
+    document.addEventListener("touchstart", () => {
+      const videos = document.querySelectorAll("video");
+
+      if (firstTouch && videos.length) videos.forEach((item) => item.play());
+      firstTouch = false;
+    });
+  }
 
   // Modal contact
   const contactBtn = document.querySelectorAll(".openModal");
