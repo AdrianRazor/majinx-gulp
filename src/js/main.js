@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("touchstart", () => {
       const videos = document.querySelectorAll("video");
 
-      if (firstTouch && videos.length) videos.forEach((item) => item.play());
+      if (firstTouch && videos.length) videos.forEach((el) => el.play());
       firstTouch = false;
     });
   }
