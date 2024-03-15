@@ -383,120 +383,120 @@
 
       <section id="apply" class="form">
         <div class="container">
-          <div class="form__wrapper">
-            <div class="form__head">
-              <h2 class="title">Apply now</h2>
-            </div>
-
-            <form class="form__body">
-              <div class="form__row">
-                <div class="form__field">
-                  <label for="name" class="form__label">
-                    Name of the project
-                  </label>
-                  <input id="name" class="form__input valid" />
-                  <span class="form__icon"></span>
-                </div>
-
-                <div class="form__field">
-                  <label for="industry" class="form__label">Industry</label>
-                  <input id="industry" class="form__input invalid" />
-                  <span class="form__icon"></span>
-                </div>
+          <div class="form__container">
+            <div class="form__wrapper">
+              <div class="form__head">
+                <h2 class="title">Apply now</h2>
               </div>
 
-              <div class="form__field">
-                <label for="proposition" class="form__label">
-                  Unique Selling Proposition
-                </label>
-                <textarea
-                  id="proposition"
-                  class="form__input form__input--textarea"
-                ></textarea>
-                <span class="form__icon"></span>
-              </div>
+              <form class="form__body">
+                <div class="form__row">
+                  <div class="form__field">
+                    <label for="name" class="form__label">
+                      Name of the project
+                    </label>
+                    <input id="name" class="form__input valid" />
+                    <span class="form__icon"></span>
+                  </div>
 
-              <div class="form__field">
-                <label for="stage" class="form__label">
-                  Stage of development
-                </label>
-                <input id="stage" class="form__input" />
-                <span class="form__icon"></span>
-              </div>
-
-              <div class="form__row form__row--small">
-                <div class="form__field">
-                  <p class="form__label">Did You Raise Before?</p>
-                  <div class="form__buttons">
-                    <div class="form__radio">
-                      <input type="radio" name="raise" id="yes" />
-                      <label for="yes" class="btn btn--white">
-                        <span>yes</span>
-                      </label>
-                    </div>
-                    <div class="form__radio">
-                      <input type="radio" name="raise" id="no" checked />
-                      <label for="no" class="btn btn--white">
-                        <span>no</span>
-                      </label>
-                    </div>
+                  <div class="form__field">
+                    <label for="industry" class="form__label">Industry</label>
+                    <input id="industry" class="form__input invalid" />
+                    <span class="form__icon"></span>
                   </div>
                 </div>
 
                 <div class="form__field">
-                  <input
-                    id="total"
-                    class="form__input form__input--raise hide"
-                    placeholder="Total Raised, Stage"
-                  />
-                </div>
-              </div>
-
-              <div class="form__row">
-                <div class="form__field">
-                  <label for="deck" class="form__label">Pitch Deck</label>
-                  <input id="deck" placeholder="Link" class="form__input" />
+                  <label for="proposition" class="form__label">
+                    Unique Selling Proposition
+                  </label>
+                  <textarea
+                    id="proposition"
+                    class="form__input form__input--textarea"
+                  ></textarea>
                   <span class="form__icon"></span>
                 </div>
 
                 <div class="form__field">
-                  <label for="social" class="form__label">Social media </label>
-                  <input id="social" placeholder="Link" class="form__input" />
+                  <label for="stage" class="form__label">
+                    Stage of development
+                  </label>
+                  <input id="stage" class="form__input" />
                   <span class="form__icon"></span>
                 </div>
-              </div>
 
-              <button class="btn btn--send form__btn" type="button">
-                <span>send</span>
-                <svg width="30" height="30">
-                  <use xlink:href="img/sprite.svg#send"></use>
-                </svg>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+                <div class="form__row form__row--small">
+                  <div class="form__field">
+                    <p class="form__label">Did You Raise Before?</p>
+                    <div class="form__buttons">
+                      <div class="form__radio">
+                        <input type="radio" name="raise" id="yes" />
+                        <label for="yes" class="btn btn--white">
+                          <span>yes</span>
+                        </label>
+                      </div>
+                      <div class="form__radio">
+                        <input type="radio" name="raise" id="no" checked />
+                        <label for="no" class="btn btn--white">
+                          <span>no</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
 
-      <section class="thanks hidden">
-        <div class="container">
-          <div class="thanks__wrapper">
-            <div class="thanks__bg">
-              <video
-                src="img/Header.mp4"
-                preload="metadata"
-                playsinline
-                autoplay
-                loop
-                muted
-                type="video/mp4"
-              ></video>
+                  <div class="form__field">
+                    <input
+                      id="total"
+                      class="form__input form__input--raise hide"
+                      placeholder="Total Raised, Stage"
+                    />
+                  </div>
+                </div>
+
+                <div class="form__row">
+                  <div class="form__field">
+                    <label for="deck" class="form__label">Pitch Deck</label>
+                    <input id="deck" placeholder="Link" class="form__input" />
+                    <span class="form__icon"></span>
+                  </div>
+
+                  <div class="form__field">
+                    <label for="social" class="form__label"
+                      >Social media
+                    </label>
+                    <input id="social" placeholder="Link" class="form__input" />
+                    <span class="form__icon"></span>
+                  </div>
+                </div>
+
+                <button class="btn btn--send form__btn" type="button">
+                  <span>send</span>
+                  <svg width="30" height="30">
+                    <use xlink:href="img/sprite.svg#send"></use>
+                  </svg>
+                </button>
+              </form>
             </div>
 
-            <svg width="60" height="60">
-              <use xlink:href="img/sprite.svg#check"></use>
-            </svg>
-            <h2>Thanks for registering</h2>
-            <p>Our manager will contact you shortly</p>
+            <div class="thanks">
+              <div class="thanks__bg">
+                <video
+                  src="img/Header.mp4"
+                  preload="metadata"
+                  playsinline
+                  autoplay
+                  loop
+                  muted
+                  type="video/mp4"
+                ></video>
+              </div>
+
+              <svg width="60" height="60">
+                <use xlink:href="img/sprite.svg#check"></use>
+              </svg>
+              <h2>Thanks for registering</h2>
+              <p>Our manager will contact you shortly</p>
+            </div>
           </div>
         </div>
       </section>

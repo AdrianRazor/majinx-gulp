@@ -268,16 +268,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Form button
+  const form = document.querySelector(".form");
   const formBtn = document.querySelector(".btn--send");
 
-  if (formBtn) {
+  if (form && formBtn) {
     formBtn.addEventListener("click", (e) => {
+      form.style.height = `${form.clientHeight}px`;
       formBtn.classList.add("animation");
 
       setTimeout(() => {
         formBtn.classList.remove("animation");
+        showThanks();
       }, 1500);
     });
+
+    function showThanks() {
+      const thanks = document.querySelector(".thanks");
+
+      if (thanks) {
+        const offsetY = window.scrollY + form.getBoundingClientRect().y - 100;
+        window.scrollTo(0, offsetY);
+
+        form.classList.add("hide");
+        form.style.height = `${thanks.clientHeight}px`;
+
+        thanks.classList.add("show");
+        thanks.style.height = `${thanks.clientHeight}px`;
+      }
+    }
   }
 
   // Footer button "go up"
