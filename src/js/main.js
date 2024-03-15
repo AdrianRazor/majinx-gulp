@@ -291,9 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         form.classList.add("hide");
         form.style.height = `${thanks.clientHeight}px`;
-
         thanks.classList.add("show");
-        thanks.style.height = `${thanks.clientHeight}px`;
       }
     }
   }
