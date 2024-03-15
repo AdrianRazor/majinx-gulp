@@ -1,12 +1,34 @@
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const root = document.documentElement;
 
   // ----- ANIMATIONS
-  // gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
+  // Talent section
+  const talent = document.querySelector(".talent");
+  const title = talent.querySelectorAll("span");
+
+  if (talent) {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: talent,
+        start: "top 60%",
+        end: "bottom top",
+      },
+    });
+
+    tl.from(title, {
+      duration: 1.2,
+      opacity: 0,
+      stagger: 0.3,
+      ease: "power2.out",
+    });
+  }
+
+  // Sections scroll
   // const main = document.querySelector(".main");
   // const fullpage = document.querySelector(".main__fullpage");
   // const sections = document.querySelectorAll(".section");
@@ -20,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // let isScrollLocked = false;
 
   // if (fullpage && sections.length) {
-  //   const talent = document.querySelector(".talent");
 
   //   let page = fullpage.offsetHeight;
   //   let vh = window.innerHeight;
@@ -67,10 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
   //     activeSection > 0 && activeSection < sections.length - 1
   //       ? main.classList.add("gradient")
   //       : main.classList.remove("gradient");
-
-  //     activeSection === 3 && talent
-  //       ? talent.classList.add("animation")
-  //       : talent.classList.remove("animation");
 
   //     // Set styles
   //     fullpage.style.transition = `${speed}s ease`;
