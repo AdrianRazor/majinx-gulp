@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Talent section
   const talent = document.querySelector(".talent");
-  const title = talent.querySelectorAll("span");
 
   if (talent) {
+    const title = talent.querySelectorAll("span");
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: talent,
@@ -169,6 +170,18 @@ document.addEventListener("DOMContentLoaded", function () {
       burger.classList.toggle("open");
       root.classList.toggle("lock");
     });
+
+    const nav = header.querySelectorAll(".nav__item");
+
+    if (nav) {
+      nav.forEach((el) => {
+        el.addEventListener("click", () => {
+          header.classList.remove("open");
+          burger.classList.remove("open");
+          root.classList.remove("lock");
+        });
+      });
+    }
   }
 
   function setHeaderMin() {
