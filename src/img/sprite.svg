@@ -9,6 +9,12 @@
     <path d="M30.5 10V52" stroke="currentColor" stroke-width="4"/>
   </symbol>
 
+  <symbol id="check" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 56.3801C44.9117 56.3801 57 44.6545 57 30.1901C57 15.7258 44.9117 4.00012 30 4.00012C15.0883 4.00012 3 15.7258 3 30.1901C3 44.6545 15.0883 56.3801 30 56.3801Z" stroke="currentColor" stroke-width="4" stroke-miterlimit="10"/>
+    <path d="M15.0789 29.5008L25.0262 39.1497L44.921 19.8518" stroke="currentColor" stroke-width="4" stroke-miterlimit="10"/>
+  </symbol>
+
+
   <symbol id="valid" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M15 28.125C22.2487 28.125 28.125 22.2487 28.125 15C28.125 7.75126 22.2487 1.875 15 1.875C7.75126 1.875 1.875 7.75126 1.875 15C1.875 22.2487 7.75126 28.125 15 28.125Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
     <path d="M7.8374 15L12.6124 19.775L22.1624 10.225" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
