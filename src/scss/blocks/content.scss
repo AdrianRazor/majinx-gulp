@@ -7,15 +7,23 @@
     font-size: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
   }
 
+  h3 {
+    font-size: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem);
+  }
+
   p,
   li {
     line-height: 140%;
-    color: var(--grey);
+    color: var(--black);
+  }
 
-    strong {
-      font-weight: 500;
-      color: var(--black);
-    }
+  a {
+    color: var(--black);
+    text-decoration: underline;
+  }
+
+  & > span {
+    color: var(--grey);
   }
 
   ul li {
