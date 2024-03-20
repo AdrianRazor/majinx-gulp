@@ -30,7 +30,7 @@
 
   &__headline {
     font-weight: 600;
-    font-size: 30px;
+    font-size: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
     line-height: 120%;
   }
 
@@ -46,11 +46,11 @@
 
     & .card {
       &__headline {
-        font-size: 24px;
+        font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.5rem);
       }
 
       &__text {
-        font-size: 18px;
+        font-size: clamp(0.625rem, 0.525rem + 0.5vw, 1.125rem);
       }
     }
   }
@@ -78,14 +78,6 @@
           width: 30px;
           height: 30px;
           padding: 5px;
-        }
-
-        &__headline {
-          font-size: 14px;
-        }
-
-        &__text {
-          font-size: 10px;
         }
       }
     }

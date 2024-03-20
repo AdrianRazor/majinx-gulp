@@ -2,7 +2,7 @@
   padding: 120px 0;
 
   &__title {
-    font-size: 60px;
+    font-size: clamp(2rem, 1.65rem + 1.75vw, 3.75rem);
     letter-spacing: 0.05em;
     text-align: center;
   }
@@ -22,7 +22,7 @@
     position: relative;
 
     font-weight: 500;
-    font-size: 30px;
+    font-size: clamp(1.125rem, 0.975rem + 0.75vw, 1.875rem);
     line-height: 140%;
     color: var(--grey);
 
@@ -96,10 +96,6 @@
   .portfolio {
     padding: 60px 0 140px;
 
-    &__title {
-      font-size: 40px;
-    }
-
     &__tabs {
       gap: 30px;
 
@@ -108,8 +104,6 @@
     }
 
     &__tab {
-      font-size: 18px;
-
       &::after {
         height: 3px;
       }

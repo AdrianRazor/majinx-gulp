@@ -33,7 +33,7 @@
 
   &__name {
     font-weight: 600;
-    font-size: 30px;
+    font-size: clamp(1.125rem, 0.975rem + 0.75vw, 1.875rem);
     letter-spacing: 0.05em;
   }
 
@@ -57,10 +57,6 @@
 
     &__head {
       gap: 15px;
-    }
-
-    &__name {
-      font-size: 18px;
     }
 
     &__post {
