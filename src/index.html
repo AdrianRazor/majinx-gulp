@@ -477,21 +477,33 @@
                 </div>
 
                 <div class="form__field">
-                  <label
-                    for="proposition"
-                    class="form__label form__label--comment"
-                  >
-                    Product Intro
-                    <p class="form__count">
+                  <div class="form__comment">
+                    <p style="width: 48%">
+                      <label for="proposition" class="form__label">
+                        Product Intro
+                      </label>
+                    </p>
+                    <p class="form__count" style="width: 48%">
                       <span id="amountSymbols">0</span> / 400
                     </p>
-                  </label>
-                  <textarea
-                    id="proposition"
-                    class="form__input form__input--textarea"
-                    maxlength="400"
-                  ></textarea>
-                  <span class="form__icon"></span>
+                  </div>
+                  <p>
+                    <span
+                      class="wpcf7-form-control-wrap"
+                      data-name="proposition"
+                    >
+                      <textarea
+                        cols="40"
+                        rows="10"
+                        class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form__input form__input--textarea"
+                        id="proposition"
+                        aria-required="true"
+                        aria-invalid="false"
+                        name="proposition"
+                        maxlength="400"
+                      ></textarea>
+                    </span>
+                  </p>
                 </div>
 
                 <button class="btn btn--send form__btn" type="button">
