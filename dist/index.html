@@ -412,23 +412,40 @@
                   </div>
                 </div>
 
-                <div class="form__field">
-                  <label for="proposition" class="form__label">
-                    Product Intro
-                  </label>
-                  <textarea
-                    id="proposition"
-                    class="form__input form__input--textarea"
-                  ></textarea>
-                  <span class="form__icon"></span>
+                <div class="form__row">
+                  <div class="form__field">
+                    <label for="deck" class="form__label">Pitch Deck</label>
+                    <input id="deck" placeholder="Link" class="form__input" />
+                    <span class="form__icon"></span>
+                  </div>
+
+                  <div class="form__field">
+                    <label for="stage" class="form__label">
+                      Stage Of Development
+                    </label>
+                    <input id="stage" class="form__input" />
+                    <span class="form__icon"></span>
+                  </div>
                 </div>
 
-                <div class="form__field">
-                  <label for="stage" class="form__label">
-                    Stage Of Development
-                  </label>
-                  <input id="stage" class="form__input" />
-                  <span class="form__icon"></span>
+                <div class="form__row">
+                  <div class="form__field">
+                    <label for="social" class="form__label">
+                      Social media
+                    </label>
+                    <input id="social" placeholder="Link" class="form__input" />
+                    <span class="form__icon"></span>
+                  </div>
+
+                  <div class="form__field">
+                    <label for="social" class="form__label"> Contact </label>
+                    <input
+                      id="social"
+                      placeholder="Email, Telegram or WhatsApp"
+                      class="form__input"
+                    />
+                    <span class="form__icon"></span>
+                  </div>
                 </div>
 
                 <div class="form__row form__row--small">
@@ -459,29 +476,21 @@
                   </div>
                 </div>
 
-                <div class="form__row">
-                  <div class="form__field">
-                    <label for="deck" class="form__label">Pitch Deck</label>
-                    <input id="deck" placeholder="Link" class="form__input" />
-                    <span class="form__icon"></span>
-                  </div>
-
-                  <div class="form__field">
-                    <label for="social" class="form__label">
-                      Social media
-                    </label>
-                    <input id="social" placeholder="Link" class="form__input" />
-                    <span class="form__icon"></span>
-                  </div>
-                </div>
-
                 <div class="form__field">
-                  <label for="social" class="form__label"> Contact </label>
-                  <input
-                    id="social"
-                    placeholder="Email, Telegram or WhatsApp"
-                    class="form__input"
-                  />
+                  <label
+                    for="proposition"
+                    class="form__label form__label--comment"
+                  >
+                    Product Intro
+                    <p class="form__count">
+                      <span id="amountSymbols">0</span> / 400
+                    </p>
+                  </label>
+                  <textarea
+                    id="proposition"
+                    class="form__input form__input--textarea"
+                    maxlength="400"
+                  ></textarea>
                   <span class="form__icon"></span>
                 </div>
 

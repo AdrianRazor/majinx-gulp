@@ -267,6 +267,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Textarea
+  const textarea = document.querySelector("textarea");
+  const amountSymbols = document.querySelector("#amountSymbols");
+
+  if (textarea && amountSymbols) {
+    textarea.addEventListener("input", () => {
+      amountSymbols.textContent = textarea.value.length;
+    });
+  }
+
   // Form button
   const form = document.querySelector(".form");
   const formBtn = document.querySelector(".btn--send");
