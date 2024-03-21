@@ -5,16 +5,22 @@
 
   h2 {
     font-size: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+    letter-spacing: 0.05em;
   }
 
   h3 {
     font-size: clamp(1.25rem, 1.125rem + 0.625vw, 1.875rem);
+    letter-spacing: 0.05em;
   }
 
   p,
   li {
     line-height: 140%;
     color: var(--black);
+  }
+
+  strong {
+    font-weight: 500;
   }
 
   a {
@@ -29,11 +35,6 @@
   ul li {
     list-style-type: initial;
     list-style-position: inside;
-  }
-
-  &--center {
-    text-align: center;
-    text-wrap: balance;
   }
 
   &__headline {
@@ -63,6 +64,22 @@
         height: 5px;
         background: var(--gradient);
       }
+    }
+  }
+
+  &--center {
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  &--about {
+    p,
+    li {
+      color: var(--grey);
+    }
+
+    strong {
+      color: var(--black);
     }
   }
 }
