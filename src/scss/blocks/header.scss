@@ -44,19 +44,6 @@
   }
 
   &__logo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    &-text {
-      padding-top: 5px;
-
-      font-weight: 500;
-      font-size: 16px;
-      letter-spacing: 0.05em;
-      color: var(--grey);
-    }
-
     &-min {
       display: block;
       width: 40px;
