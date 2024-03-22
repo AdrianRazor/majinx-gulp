@@ -30,7 +30,7 @@
 
   &__headline {
     font-weight: 600;
-    font-size: clamp(1.5rem, 1.425rem + 0.375vw, 1.875rem);
+    font-size: 30px;
     line-height: 120%;
   }
 
@@ -58,7 +58,21 @@
 
 @media (max-width: 1470px) {
   .card {
-    gap: 10px;
+    padding: 20px;
+
+    &__logo {
+      width: 50px;
+      height: 50px;
+      padding: 8px;
+    }
+
+    &__headline {
+      font-size: 24px;
+    }
+
+    &__text {
+      font-size: 16px;
+    }
 
     &--small {
       & .card {
