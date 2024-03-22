@@ -49,25 +49,17 @@
   }
 }
 
-@media (max-width: 1023px) {
-  .thanks {
-    h2 {
-      font-size: 36px;
-    }
-  }
-}
-
-@media (max-width: 767px) {
+@media (max-width: 1365px) {
   .thanks {
     padding: 40px 15px;
+
+    h2 {
+      font-size: 30px;
+    }
 
     svg {
       width: 40px;
       height: 40px;
-    }
-
-    h2 {
-      font-size: 30px;
     }
   }
 }

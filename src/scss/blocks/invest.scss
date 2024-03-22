@@ -55,7 +55,7 @@
 
   &__subtitle {
     font-weight: 500;
-    font-size: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
+    font-size: 18px;
     line-height: 120%;
     letter-spacing: 0.05em;
     text-align: center;
@@ -65,7 +65,7 @@
   &__title {
     margin-top: 32px;
 
-    font-size: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+    font-size: 30px;
     line-height: 120%;
     letter-spacing: 0.05em;
     text-align: center;
@@ -74,6 +74,7 @@
   &__text {
     margin-top: 20px;
 
+    font-size: 20px;
     line-height: 160%;
     letter-spacing: 0.05em;
     text-align: center;
@@ -126,6 +127,36 @@
           opacity: 1;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 1365px) {
+  .invest {
+    margin: 40px 0;
+
+    &__block {
+      padding: 20px 25px 30px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+    }
+
+    &__title {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+
+    &__btn {
+      margin-top: 32px;
+      padding: 8px 20px;
+
+      font-size: 14px;
     }
   }
 }

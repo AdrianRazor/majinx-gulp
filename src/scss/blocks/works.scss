@@ -34,6 +34,16 @@
   }
 }
 
+@media (max-width: 1365px) {
+  .works {
+    margin: 40px 0;
+
+    &__btn {
+      padding: 5px 30px;
+    }
+  }
+}
+
 @media (max-width: 1199px) {
   .works {
     &__body {
@@ -53,8 +63,6 @@
 
 @media (max-width: 767px) {
   .works {
-    margin: 40px 0;
-
     &__btn {
       padding: 5px 20px;
       border-radius: 7px;

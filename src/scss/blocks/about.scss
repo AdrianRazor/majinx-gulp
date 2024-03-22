@@ -10,10 +10,14 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1365px) {
   .about {
     margin: 40px 0;
+  }
+}
 
+@media (max-width: 767px) {
+  .about {
     &__wrapper {
       grid-template-columns: initial;
       gap: 20px;

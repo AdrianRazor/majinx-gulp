@@ -131,6 +131,27 @@
   }
 }
 
+@media (max-width: 1365px) {
+  .header {
+    &__logo {
+      gap: 13px;
+
+      &-min {
+        width: 30px;
+      }
+
+      &-text {
+        padding-top: 7px;
+        font-size: 14px;
+      }
+    }
+
+    &__link {
+      height: 50px;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .header {
     &__wrapper {

@@ -81,6 +81,18 @@
   }
 }
 
+@media (max-width: 1365px) {
+  .hero {
+    &__bg {
+      height: 350px;
+    }
+
+    &__wrapper {
+      padding: 80px 0 60px;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .hero {
     &__bg {
