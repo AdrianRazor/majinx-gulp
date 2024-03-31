@@ -40,12 +40,11 @@
   &__headline {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 20px;
+    gap: 10px 54px;
 
-    margin: 20px 0;
+    padding-bottom: 10px;
 
     font-weight: 500;
-    font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
     line-height: 120%;
     color: var(--grey);
 
@@ -92,6 +91,8 @@
     &__headline {
       justify-content: center;
       text-align: center;
+
+      margin: 20px 0;
 
       &--border {
         width: fit-content;

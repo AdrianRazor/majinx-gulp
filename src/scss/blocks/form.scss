@@ -124,44 +124,6 @@
 
   &__radio {
     width: 100%;
-
-    input {
-      display: none;
-
-      &:checked ~ label {
-        border-width: 0;
-
-        span {
-          color: var(--black);
-        }
-
-        &::before {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
-    }
-
-    label {
-      &::before {
-        content: "";
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: -1;
-
-        display: block;
-        width: 100%;
-        height: 100%;
-
-        background: var(--gradient);
-        visibility: hidden;
-        opacity: 0;
-        transition: var(--ease);
-      }
-    }
   }
 
   &__buttons {
