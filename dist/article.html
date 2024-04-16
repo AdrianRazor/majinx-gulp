@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
     <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="libs/splide.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Majinx</title>
   </head>
 
@@ -346,14 +347,93 @@
 
       <section class="related">
         <div class="container">
-          <div class="related__head">
-            <p>Related topics</p>
+          <div id="splideRelated" class="splide related__wrapper">
+            <div class="related__head">
+              <p>Related topics</p>
 
-            <ul class="related__tags">
-              <li class="tag"><span>News</span></li>
-              <li class="tag"><span>Lorem</span></li>
-              <li class="tag"><span>Dolor</span></li>
-            </ul>
+              <ul class="related__tags">
+                <li class="tag tag--big"><span>News</span></li>
+                <li class="tag tag--big"><span>Lorem</span></li>
+                <li class="tag tag--big"><span>Dolor</span></li>
+              </ul>
+
+              <div class="splide__arrows"></div>
+            </div>
+
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide blog-card">
+                  <a href="article.html" class="blog-card__img">
+                    <img src="img/decor-bg.jpg" alt="article" />
+                  </a>
+
+                  <h2>
+                    <a href="article.html">Lorem ipsum dolor sit</a>
+                  </h2>
+
+                  <div class="blog-card__row">
+                    <p>9.04.2024</p>
+
+                    <ul class="blog-card__tags">
+                      <li class="tag">
+                        <span>News</span>
+                      </li>
+                      <li class="tag">
+                        <span>Lorem</span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="splide__slide blog-card">
+                  <a href="article.html" class="blog-card__img">
+                    <img src="img/decor-bg.jpg" alt="article" />
+                  </a>
+
+                  <h2>
+                    <a href="article.html">
+                      Doloremque perspiciatis autem numquam
+                    </a>
+                  </h2>
+
+                  <div class="blog-card__row">
+                    <p>22.04.2024</p>
+
+                    <ul class="blog-card__tags">
+                      <li class="tag">
+                        <span>News</span>
+                      </li>
+                      <li class="tag">
+                        <span>Lorem</span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="splide__slide blog-card">
+                  <a href="article.html" class="blog-card__img">
+                    <img src="img/decor-bg.jpg" alt="article" />
+                  </a>
+
+                  <h2>
+                    <a href="article.html">Lorem ipsum dolor sit</a>
+                  </h2>
+
+                  <div class="blog-card__row">
+                    <p>9.04.2024</p>
+
+                    <ul class="blog-card__tags">
+                      <li class="tag">
+                        <span>News</span>
+                      </li>
+                      <li class="tag">
+                        <span>Lorem</span>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -593,6 +673,7 @@
       </div>
     </div>
 
+    <script src="libs/splide.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -59,6 +59,14 @@ export function fonts() {
     .pipe(browserSync.stream());
 }
 
+// Libs task
+export function libs() {
+  return gulp
+    .src("src/libs/**/*")
+    .pipe(gulp.dest("dist/libs/"))
+    .pipe(browserSync.stream());
+}
+
 // Clean task
 export function clean() {
   return del(["dist"]);
@@ -75,11 +83,12 @@ export function watch() {
   gulp.watch("src/js/**/*.js", js).on("all", browserSync.reload);
   gulp.watch("src/img/**/*", img);
   gulp.watch("src/fonts/**/*", fonts);
+  gulp.watch("src/libs/**/*", libs);
 }
 
 // Default task
 export const dev = gulp.series(
   clean,
-  gulp.parallel(html, scss, js, img, fonts),
+  gulp.parallel(html, scss, js, img, fonts, libs),
   watch
 );

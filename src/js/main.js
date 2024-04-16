@@ -365,4 +365,23 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  // Article slider
+  if (document.querySelector("#splideRelated")) {
+    var splideRelated = new Splide("#splideRelated", {
+      perPage: 1,
+      perMove: 1,
+      gap: 20,
+      pagination: false,
+
+      mediaQuery: "min",
+      breakpoints: {
+        1024: {
+          destroy: true,
+        },
+      },
+    });
+
+    splideRelated.mount();
+  }
 });
