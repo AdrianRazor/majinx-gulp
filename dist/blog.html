@@ -138,144 +138,195 @@
         </div>
       </section>
 
-      <section class="portfolio">
+      <section class="blog">
         <div class="container">
-          <h1 class="portfolio__title">Our Portfolio</h1>
+          <div class="blog__wrapper">
+            <h1>Blog</h1>
 
-          <ul class="tabs portfolio__tabs">
-            <li class="tabs__tab active">All</li>
-            <li class="tabs__tab">DeFi</li>
-            <li class="tabs__tab">Infrastructure</li>
-            <li class="tabs__tab">Consumer</li>
-            <li class="tabs__tab">Others</li>
-          </ul>
+            <div class="blog__head">
+              <ul class="tabs tabs--blog blog__tabs">
+                <li class="tabs__tab active">All Posts</li>
+                <li class="tabs__tab">Internal news</li>
+                <li class="tabs__tab">Policy</li>
+                <li class="tabs__tab">Blog</li>
+              </ul>
 
-          <div class="portfolio__wrapper">
-            <h2 class="portfolio__head">Defi</h2>
+              <div class="filter blog__filter">
+                <div class="filter__head">
+                  <button class="filter__btn">
+                    <svg width="30" height="30">
+                      <use xlink:href="img/sprite.svg#filter"></use>
+                    </svg>
+                  </button>
+                  <span class="filter__text">FIlter</span>
 
-            <div class="portfolio__grid">
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
+                  <button class="filter__arrow">
+                    <svg width="13" height="22">
+                      <use xlink:href="img/sprite.svg#arrowBig"></use>
+                    </svg>
+                  </button>
                 </div>
 
-                <h3 class="card__headline">Majinx</h3>
-                <p class="card__text">
-                  Full list of Fundraising and Marketing services for DeFi
-                  /GameFi / Startups / AI
-                </p>
+                <div class="filter__body">
+                  <ul>
+                    <li>New</li>
+                    <li>Most popular </li>
+                    <li>Old</li>
+                  </ul>
+                </div>
               </div>
 
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Gate.io</h3>
-                <p class="card__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                  nisi quos nemo dolore
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">HTX</h3>
-                <p class="card__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Hacken</h3>
-                <p class="card__text">Eaque, accusamus!</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">WhiteBit</h3>
-                <p class="card__text">Impedit, tenetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Majinx</h3>
-                <p class="card__text">
-                  Full list of Fundraising and Marketing services for DeFi
-                  /GameFi / Startups / AI
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Incrypted</h3>
-                <p class="card__text">Ipsum dolor sit amet consectetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Lorem ipsum dolor</h3>
-                <p class="card__text">Impedit, tenetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">DAO Market</h3>
-                <p class="card__text">
-                  Magni illum asperiores optio repudiandae facere neque totam
-                  ipsum
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Hacken</h3>
-                <p class="card__text">Eaque, accusamus!</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">WhiteBit</h3>
-                <p class="card__text">Impedit, tenetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Enjinstarter</h3>
-                <p class="card__text">Voluptas, molestiae</p>
+              <div class="search blog__search">
+                <input type="text" id="search" placeholder="Search..." />
+                <button class="search__btn">
+                  <svg width="14" height="14">
+                    <use xlink:href="img/sprite.svg#arrow"></use>
+                  </svg>
+                </button>
               </div>
             </div>
+
+            <div class="blog__grid">
+              <div class="blog-card">
+                <a
+                  href="article.html"
+                  class="blog-card__img blog-card__img--new"
+                >
+                  <img src="img/decor-bg.jpg" alt="article" />
+                  <p>New</p>
+                </a>
+
+                <h2>
+                  <a href="article.html">Announcing Reth Beta!</a>
+                </h2>
+
+                <ul class="blog-card__tags">
+                  <li class="tag">
+                    <span>News</span>
+                  </li>
+                  <li class="tag">
+                    <span>Lorem</span>
+                  </li>
+                  <li class="tag">
+                    <span>Ipsum</span>
+                  </li>
+                  <li class="tag">
+                    <span>Announcing</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-card">
+                <a href="article.html" class="blog-card__img">
+                  <img src="img/decor-bg.jpg" alt="article" />
+                </a>
+
+                <h2>
+                  <a href="article.html">Lorem ipsum dolor sit</a>
+                </h2>
+
+                <ul class="blog-card__tags">
+                  <li class="tag">
+                    <span>News</span>
+                  </li>
+                  <li class="tag">
+                    <span>Lorem</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-card">
+                <a href="article.html" class="blog-card__img">
+                  <img src="img/decor-bg.jpg" alt="article" />
+                </a>
+
+                <h2>
+                  <a href="article.html"
+                    >Dolor sit amet consectetur adipisicing elit</a
+                  >
+                </h2>
+
+                <ul class="blog-card__tags">
+                  <li class="tag">
+                    <span>News</span>
+                  </li>
+                  <li class="tag">
+                    <span>Lorem</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-card">
+                <a
+                  href="article.html"
+                  class="blog-card__img blog-card__img--new"
+                >
+                  <img src="img/decor-bg.jpg" alt="article" />
+                  <p>New</p>
+                </a>
+
+                <h2>
+                  <a href="article.html">Announcing Reth Beta!</a>
+                </h2>
+
+                <ul class="blog-card__tags">
+                  <li class="tag">
+                    <span>News</span>
+                  </li>
+                  <li class="tag">
+                    <span>Lorem</span>
+                  </li>
+                  <li class="tag">
+                    <span>Ipsum</span>
+                  </li>
+                  <li class="tag">
+                    <span>Announcing</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-card">
+                <a href="article.html" class="blog-card__img">
+                  <img src="img/decor-bg.jpg" alt="article" />
+                </a>
+
+                <h2>
+                  <a href="article.html">Lorem ipsum dolor sit</a>
+                </h2>
+
+                <ul class="blog-card__tags">
+                  <li class="tag">
+                    <span>News</span>
+                  </li>
+                  <li class="tag">
+                    <span>Lorem</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="blog-card">
+                <a href="article.html" class="blog-card__img">
+                  <img src="img/decor-bg.jpg" alt="article" />
+                </a>
+
+                <h2>
+                  <a href="article.html"
+                    >Dolor sit amet consectetur adipisicing elit</a
+                  >
+                </h2>
+
+                <ul class="blog-card__tags">
+                  <li class="tag">
+                    <span>News</span>
+                  </li>
+                  <li class="tag">
+                    <span>Lorem</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <button class="blog__btn">Load more</button>
           </div>
         </div>
       </section>

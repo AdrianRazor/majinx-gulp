@@ -79,6 +79,14 @@
       }
     }
   }
+
+  &--article {
+    & .hero {
+      &__bg {
+        height: 90px;
+      }
+    }
+  }
 }
 
 @media (max-width: 1470px) {

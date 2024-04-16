@@ -124,7 +124,7 @@
     </header>
 
     <main class="main">
-      <section class="hero">
+      <section class="hero hero--article">
         <div class="hero__bg">
           <video
             src="img/Header.mp4"
@@ -138,144 +138,222 @@
         </div>
       </section>
 
-      <section class="portfolio">
+      <section class="article">
         <div class="container">
-          <h1 class="portfolio__title">Our Portfolio</h1>
+          <div class="article__grid">
+            <div class="article__img">
+              <img src="img/decor-bg.jpg" alt="article highlight" />
+            </div>
 
-          <ul class="tabs portfolio__tabs">
-            <li class="tabs__tab active">All</li>
-            <li class="tabs__tab">DeFi</li>
-            <li class="tabs__tab">Infrastructure</li>
-            <li class="tabs__tab">Consumer</li>
-            <li class="tabs__tab">Others</li>
-          </ul>
+            <div class="article__head">
+              <ul class="breadcrumbs article__breadcrumbs">
+                <li>
+                  <a href="blog.html">Blog</a>
+                </li>
+                <li>
+                  <a>Everything Is A Perp</a>
+                </li>
+              </ul>
 
-          <div class="portfolio__wrapper">
-            <h2 class="portfolio__head">Defi</h2>
+              <h1>Everything Is A Perp</h1>
 
-            <div class="portfolio__grid">
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
+              <div class="article__info">
+                <p>9.04.2024</p>
+
+                <div class="article__share article__share--mobile">
+                  <p>Share</p>
+
+                  <a
+                    class="nav__link"
+                    href="https://linkedin.com"
+                    target="_blank"
+                  >
+                    <svg width="20" height="19">
+                      <use xlink:href="img/sprite.svg#linkedinColor"></use>
+                    </svg>
+                  </a>
+                  <a
+                    class="nav__link"
+                    href="https://twitter.com"
+                    target="_blank"
+                  >
+                    <svg width="51" height="49">
+                      <use xlink:href="img/sprite.svg#twitter"></use>
+                    </svg>
+                  </a>
                 </div>
 
-                <h3 class="card__headline">Majinx</h3>
-                <p class="card__text">
-                  Full list of Fundraising and Marketing services for DeFi
-                  /GameFi / Startups / AI
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Gate.io</h3>
-                <p class="card__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-                  nisi quos nemo dolore
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">HTX</h3>
-                <p class="card__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Hacken</h3>
-                <p class="card__text">Eaque, accusamus!</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">WhiteBit</h3>
-                <p class="card__text">Impedit, tenetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Majinx</h3>
-                <p class="card__text">
-                  Full list of Fundraising and Marketing services for DeFi
-                  /GameFi / Startups / AI
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Incrypted</h3>
-                <p class="card__text">Ipsum dolor sit amet consectetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Lorem ipsum dolor</h3>
-                <p class="card__text">Impedit, tenetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-1.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">DAO Market</h3>
-                <p class="card__text">
-                  Magni illum asperiores optio repudiandae facere neque totam
-                  ipsum
-                </p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Hacken</h3>
-                <p class="card__text">Eaque, accusamus!</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-3.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">WhiteBit</h3>
-                <p class="card__text">Impedit, tenetur</p>
-              </div>
-
-              <div class="card">
-                <div class="card__logo">
-                  <img src="img/logo-2.png" alt="log" />
-                </div>
-
-                <h3 class="card__headline">Enjinstarter</h3>
-                <p class="card__text">Voluptas, molestiae</p>
+                <ul class="article__tags">
+                  <li class="tag tag--big"><span>News</span></li>
+                  <li class="tag tag--big"><span>Lorem</span></li>
+                  <li class="tag tag--big"><span>Dolor</span></li>
+                </ul>
               </div>
             </div>
+
+            <div class="article__share">
+              <p>Share</p>
+
+              <a class="nav__link" href="https://linkedin.com" target="_blank">
+                <svg width="20" height="19">
+                  <use xlink:href="img/sprite.svg#linkedinColor"></use>
+                </svg>
+              </a>
+              <a class="nav__link" href="https://twitter.com" target="_blank">
+                <svg width="51" height="49">
+                  <use xlink:href="img/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </div>
+
+            <div class="content content--article article__text">
+              <h2>Lorem ipsum</h2>
+              <h3 id="first">Dolor sit amet</h3>
+              <p>
+                We’ve been <a href="#">thinking a lot about power perps</a>.
+                Power perps are assets that target the power of an index price,
+                like index2 or index3. It’s a fun rabbit hole to go down. The
+                longer you think about power perps, the more you see
+                how everythingresembles a power perp. <br />Here we make three
+                surprising claims:
+              </p>
+
+              <ol>
+                <li>
+                  Crypto-collateralized stablecoins (like DAI or RAI) are like
+                  0-perps.
+                </li>
+                <li>Margined futures (like dYdX) are 1-perps.</li>
+                <li>
+                  Constant product AMMs like Uniswap are a replicating portfolio
+                  for a 0.5-perp, and constant geometric-mean AMMs
+                  like Balancer are replicating portfolios for power perps for
+                  any value between 0 and 1.
+                </li>
+              </ol>
+
+              <h3 id="second">Dolor sit amet</h3>
+              <p>
+                This is cool because it reveals a surprisingly compact design
+                space across three of the main primitives in DeFi. Let’s have a
+                look at each one, but first we need a definition of perps and
+                power perps.
+                <br />
+                Definition: A perpetual is a contract that tracks and gives
+                exposure to an index1, and exchanges regular payments that are
+                larger the further the traded price (mark) is away from the
+                target price (index). (See The Cartoon Guide to Perps for a more
+                detailed explanation.)
+              </p>
+
+              <p>
+                Graphically, the funding payment varies with the area between
+                the mark and index price over a funding period (see figure). If
+                the mark price is above the index, longs pay shorts. If the mark
+                price is below the index, shorts pay longs.
+                <br />
+                There are various mechanisms to transfer funding payments (e.g.,
+                cash or in-kind payments, periodic or continuous funding,
+                automatic or by governance, etc.), and various mechanisms to set
+                interest rates based on prices (including proportional
+                mechanisms like used by Squeeth and the more complex PID
+                controller used by Reflexer). All mechanisms implement the idea
+                that longs should pay shorts when mark is higher than index, and
+                vice versa. <br />
+                Definition: A <a href="#">power perpetual</a> is a perpetual
+                with index price^p for some power p.
+              </p>
+
+              <h3 id="third">Deserunt sit eum facere distinctio</h3>
+              <p>
+                To create a short position in a power perpetual contract, lock
+                some collateral in a vault and mint (i.e. borrow) some power
+                perpetual. Sell this minted power perpetual to go short. To go
+                long, buy from whoever owns some.
+              </p>
+
+              <p>
+                To create a short position in a power perpetual contract, lock
+                some collateral in a vault and mint (i.e. borrow) some power
+                perpetual. Sell this minted power perpetual to go short. To go
+                long, buy from whoever owns some.
+              </p>
+
+              <h3 id="fourth">Totam itaque in corrupti</h3>
+              <p>
+                To create a short position in a power perpetual contract, lock
+                some collateral in a vault and mint (i.e. borrow) some power
+                perpetual. Sell this minted power perpetual to go short. To go
+                long, buy from whoever owns some.
+                <br />
+                To create a short position in a power perpetual contract, lock
+                some collateral in a vault and mint (i.e. borrow) some power
+                perpetual. Sell this minted power perpetual to go short. To go
+                long, buy from whoever owns some.
+              </p>
+
+              <h3 id="fifth">Totam itaque in corrupti</h3>
+              <p>
+                To create a short position in a power perpetual contract, lock
+                some collateral in a vault and mint (i.e. borrow) some power
+                perpetual. Sell this minted power perpetual to go short. To go
+                long, buy from whoever owns some.
+              </p>
+
+              <p>
+                To create a short position in a power perpetual contract, lock
+                some collateral in a vault and mint (i.e. borrow) some power
+                perpetual. Sell this minted power perpetual to go short. To go
+                long, buy from whoever owns some.
+              </p>
+
+              <p>
+                This is cool because it reveals a surprisingly compact design
+                space across three of the main primitives in DeFi. Let’s have a
+                look at each one, but first we need a definition of perps and
+                power perps.
+                <br />
+                Definition: A perpetual is a contract that tracks and gives
+                exposure to an index1, and exchanges regular payments that are
+                larger the further the traded price (mark) is away from the
+                target price (index). (See The Cartoon Guide to Perps for a more
+                detailed explanation.)
+              </p>
+            </div>
+
+            <ul class="article__aside">
+              <li class="active">
+                <a href="#first">Як шортити Bitcoin: що потрібно знати</a>
+              </li>
+              <li>
+                <a href="#second">Lorem ipsum dolor sit</a>
+              </li>
+              <li>
+                <a href="#third">Odio libero ratione qui.</a>
+              </li>
+              <li>
+                <a href="#fourth">
+                  Aspernatur dignissimos nesciunt doloribus voluptate quas
+                </a>
+              </li>
+              <li>
+                <a href="#fifth">Як шортити Bitcoin: що потрібно знати</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="related">
+        <div class="container">
+          <div class="related__head">
+            <p>Related topics</p>
+
+            <ul class="related__tags">
+              <li class="tag"><span>News</span></li>
+              <li class="tag"><span>Lorem</span></li>
+              <li class="tag"><span>Dolor</span></li>
+            </ul>
           </div>
         </div>
       </section>

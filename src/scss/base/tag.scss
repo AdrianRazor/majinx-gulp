@@ -1,0 +1,28 @@
+.tag {
+  padding: 1px;
+  border-radius: 99px;
+
+  background: var(--gradient-2);
+
+  span {
+    display: block;
+
+    padding: 4px 9px;
+    border-radius: 99px;
+
+    font-size: 11px;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+
+    background: var(--white);
+  }
+
+  &--big {
+    padding: 2px;
+
+    span {
+      padding: 6px 18px;
+      font-size: 16px;
+    }
+  }
+}

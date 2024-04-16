@@ -10,7 +10,11 @@
 @import "base/logo.scss";
 @import "base/text.scss";
 @import "base/title.scss";
+@import "base/tag.scss";
+@import "base/tabs.scss";
+@import "base/search.scss";
 @import "base/radio.scss";
+@import "base/filter.scss";
 
 @import "blocks/header.scss";
 @import "blocks/nav.scss";
@@ -30,3 +34,7 @@
 @import "blocks/card.scss";
 @import "blocks/team.scss";
 @import "blocks/worker.scss";
+
+@import "blocks/blog.scss";
+@import "blocks/blog-card.scss";
+@import "blocks/article.scss";

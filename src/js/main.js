@@ -315,14 +315,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Portfolio tabs
-  const tab = document.querySelectorAll(".portfolio__tab");
+  // Tabs
+  const tab = document.querySelectorAll(".tabs__tab");
 
   if (tab.length) {
     tab.forEach((el) => {
       el.addEventListener("click", () => {
         tab.forEach((e) => e.classList.remove("active"));
         el.classList.add("active");
+      });
+    });
+  }
+
+  // Filter
+  const filter = document.querySelector(".filter");
+
+  if (filter) {
+    const head = filter.querySelector(".filter__head");
+    const li = filter.querySelectorAll("li");
+
+    head.addEventListener("click", () => {
+      filter.classList.toggle("open");
+    });
+
+    li.forEach((el) => {
+      el.addEventListener("click", () => {
+        filter.classList.remove("open");
+      });
+    });
+
+    window.addEventListener("click", (e) => {
+      if (!e.target.closest(".filter")) {
+        filter.classList.remove("open");
+      }
+    });
+  }
+
+  // Article anchor links
+  const anchors = document.querySelectorAll(".article__aside li");
+
+  if (anchors) {
+    anchors.forEach((li) => {
+      const a = li.querySelector("a");
+
+      a.addEventListener("click", () => {
+        anchors.forEach((el) => el.classList.remove("active"));
+
+        li.classList.add("active");
       });
     });
   }

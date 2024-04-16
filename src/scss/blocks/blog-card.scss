@@ -1,0 +1,65 @@
+.blog-card {
+  &__img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    height: 250px;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    & > p {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      color: var(--green);
+    }
+
+    &--new {
+      &::before {
+        content: "";
+
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+
+        background: var(--green);
+      }
+    }
+  }
+
+  h2 {
+    margin-top: 20px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+
+    a {
+      color: var(--black);
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 10px;
+  }
+}

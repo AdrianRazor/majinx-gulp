@@ -81,6 +81,13 @@
       color: var(--black);
     }
   }
+
+  &--article {
+    p,
+    li {
+      font-weight: 500;
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -97,6 +104,10 @@
       &--border {
         width: fit-content;
       }
+    }
+
+    &--article {
+      margin-top: initial;
     }
   }
 }
