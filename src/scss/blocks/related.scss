@@ -14,7 +14,7 @@
     flex-direction: column;
     gap: 20px;
 
-    p {
+    & > p {
       line-height: 120%;
       letter-spacing: 0.05em;
       color: var(--grey);
@@ -45,12 +45,19 @@
 
   &__arrows {
     position: absolute;
-    top: calc(100% + 30px);
+    top: calc(100% + 20px);
     right: 0;
 
-    display: flex;
+    display: none;
     align-items: center;
     gap: 5px;
+
+    & > p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--black);
+    }
   }
 
   &__arrow {
@@ -60,6 +67,8 @@
     height: 30px;
 
     background: transparent;
+
+    transform: initial;
   }
 }
 
@@ -73,7 +82,7 @@
 
 @media (max-width: 1023px) {
   .related {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
   }
 
   .splide {
@@ -82,6 +91,10 @@
       border-radius: initial;
 
       background: transparent;
+    }
+
+    &__arrows {
+      display: flex;
     }
   }
 }

@@ -80,6 +80,7 @@
   &__tags {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
   }
 
@@ -91,6 +92,12 @@
     top: 20px;
     z-index: 1;
 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    max-width: 55px;
     height: fit-content;
 
     p {
@@ -99,6 +106,10 @@
       line-height: 140%;
       letter-spacing: 0.1em;
       color: var(--grey);
+    }
+
+    a {
+      color: var(--green-2);
     }
 
     &--mobile {
@@ -215,6 +226,7 @@
 
     &__tags {
       gap: 10px;
+      width: 100%;
     }
 
     &__share {
@@ -226,6 +238,8 @@
       display: none;
       align-items: center;
       gap: 14px;
+
+      max-width: initial;
 
       &--mobile {
         display: flex;

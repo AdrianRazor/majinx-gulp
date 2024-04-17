@@ -382,6 +382,22 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
 
+    const sliderLength = document.querySelectorAll(
+      "#splideRelated .splide__slide"
+    ).length;
+
+    // Set total slides
+    splideRelated.on("mounted", function () {
+      const amount = document.querySelector("#splideRelated .amount");
+      amount.textContent = sliderLength;
+    });
+
+    // Change number of active slide
+    splideRelated.on("move", function (newIndex) {
+      const current = document.querySelector("#splideRelated .current");
+      current.textContent = newIndex + 1;
+    });
+
     splideRelated.mount();
   }
 });
