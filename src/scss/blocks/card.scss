@@ -3,9 +3,10 @@
   flex-direction: column;
   gap: 20px;
 
-  padding: 40px 30px;
+  padding: 30px 20px;
   border-radius: var(--radius);
-  background: var(--light-2);
+
+  background: var(--white);
 
   &__logo {
     flex-shrink: 0;
@@ -16,6 +17,7 @@
     border-radius: 50%;
 
     background: var(--white);
+    border: 1px solid var(--black);
 
     img {
       object-fit: contain;
@@ -43,6 +45,8 @@
     align-items: center;
 
     padding: 20px;
+
+    background: var(--light-2);
 
     & .card {
       &__headline {
