@@ -14,6 +14,11 @@
     flex-direction: column;
     gap: 20px;
 
+    h2 {
+      font-size: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+      letter-spacing: 0.05em;
+    }
+
     & > p {
       line-height: 120%;
       letter-spacing: 0.05em;
@@ -26,6 +31,23 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+  }
+
+  &--articles {
+    margin-top: 40px;
+    margin-bottom: initial;
+
+    & .related {
+      &__wrapper {
+        gap: 40px;
+      }
+    }
+
+    & .splide {
+      &__arrows {
+        top: calc(100% + 10px);
+      }
+    }
   }
 }
 
@@ -83,6 +105,22 @@
 @media (max-width: 1023px) {
   .related {
     margin-bottom: 70px;
+
+    &--articles {
+      margin-bottom: initial;
+
+      & .related {
+        &__wrapper {
+          gap: 20px;
+        }
+      }
+
+      & .splide {
+        &__arrows {
+          top: 0;
+        }
+      }
+    }
   }
 
   .splide {

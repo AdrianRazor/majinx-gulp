@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
     <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="libs/splide.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Majinx</title>
   </head>
 
@@ -353,7 +354,153 @@
               </div>
             </div>
 
+            <!-- If there are no search matches -->
+            <div class="blog__grid blog__grid--empty hidden">
+              <div class="blog__img">
+                <img src="img/empty-search.svg" alt="dead system" />
+              </div>
+
+              <h3>Oops!</h3>
+
+              <p>
+                Articles on your request are still being written by our
+                researchers.
+                <br />
+                Please check out the latest articles on our blog.
+              </p>
+            </div>
+
             <button class="blog__btn">Load more</button>
+
+            <div class="related related--articles hidden">
+              <div id="splideArticles" class="splide related__wrapper">
+                <div class="related__head">
+                  <h2>More articles</h2>
+
+                  <div class="splide__arrows">
+                    <button
+                      class="splide__arrow splide__arrow--prev"
+                      type="button"
+                      disabled=""
+                      aria-label="Previous slide"
+                      aria-controls="splideArticles-track"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        height="40"
+                        focusable="false"
+                      >
+                        <path
+                          d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"
+                        ></path>
+                      </svg>
+                    </button>
+
+                    <p class="splide__counter">
+                      <span class="current">1</span>
+                      /
+                      <span class="amount">3</span>
+                    </p>
+
+                    <button
+                      class="splide__arrow splide__arrow--next"
+                      type="button"
+                      aria-label="Next slide"
+                      aria-controls="splideArticles-track"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        height="40"
+                        focusable="false"
+                      >
+                        <path
+                          d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide blog-card">
+                      <a href="article.html" class="blog-card__img">
+                        <img src="img/decor-bg.jpg" alt="article" />
+                      </a>
+
+                      <h2>
+                        <a href="article.html">Lorem ipsum dolor sit</a>
+                      </h2>
+
+                      <div class="blog-card__row">
+                        <p>9.04.2024</p>
+
+                        <ul class="blog-card__tags">
+                          <li class="tag">
+                            <span>News</span>
+                          </li>
+                          <li class="tag">
+                            <span>Lorem</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="splide__slide blog-card">
+                      <a href="article.html" class="blog-card__img">
+                        <img src="img/decor-bg.jpg" alt="article" />
+                      </a>
+
+                      <h2>
+                        <a href="article.html">
+                          Doloremque perspiciatis autem numquam
+                        </a>
+                      </h2>
+
+                      <div class="blog-card__row">
+                        <p>22.04.2024</p>
+
+                        <ul class="blog-card__tags">
+                          <li class="tag">
+                            <span>News</span>
+                          </li>
+                          <li class="tag">
+                            <span>Lorem</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="splide__slide blog-card">
+                      <a href="article.html" class="blog-card__img">
+                        <img src="img/decor-bg.jpg" alt="article" />
+                      </a>
+
+                      <h2>
+                        <a href="article.html">Lorem ipsum dolor sit</a>
+                      </h2>
+
+                      <div class="blog-card__row">
+                        <p>9.04.2024</p>
+
+                        <ul class="blog-card__tags">
+                          <li class="tag">
+                            <span>News</span>
+                          </li>
+                          <li class="tag">
+                            <span>Lorem</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -593,6 +740,7 @@
       </div>
     </div>
 
+    <script src="libs/splide.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

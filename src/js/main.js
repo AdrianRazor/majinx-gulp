@@ -366,6 +366,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Blog slider
+  if (document.querySelector("#splideArticles")) {
+    var splideArticles = new Splide("#splideArticles", {
+      perPage: 1,
+      perMove: 1,
+      gap: 20,
+      pagination: false,
+
+      mediaQuery: "min",
+      breakpoints: {
+        1024: {
+          destroy: true,
+        },
+      },
+    });
+
+    const sliderLength = document.querySelectorAll(
+      "#splideArticles .splide__slide"
+    ).length;
+
+    // Set total slides
+    splideArticles.on("mounted", function () {
+      const amount = document.querySelector("#splideArticles .amount");
+      amount.textContent = sliderLength;
+    });
+
+    // Change number of active slide
+    splideArticles.on("move", function (newIndex) {
+      const current = document.querySelector("#splideArticles .current");
+      current.textContent = newIndex + 1;
+    });
+
+    splideArticles.mount();
+  }
+
   // Article slider
   if (document.querySelector("#splideRelated")) {
     var splideRelated = new Splide("#splideRelated", {
