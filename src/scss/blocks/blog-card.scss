@@ -14,36 +14,90 @@
 
     overflow: hidden;
 
-    & > p {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 1;
-
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 120%;
-      letter-spacing: 0.05em;
-      color: var(--green);
-    }
-
     &--new {
-      &::before {
-        content: "";
+      & .blog-card {
+        &__new {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
 
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1;
+          &::before {
+            content: "";
 
-        display: block;
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
 
-        background: var(--green);
+            background: var(--green);
+          }
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          & .blog-card {
+            &__new {
+              &::before {
+                width: 15px;
+                height: 14px;
+                border-radius: initial;
+
+                background-image: url("data:image/svg+xml,%3Csvg width='15' height='14' viewBox='0 0 15 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1H15' stroke='%239BF449'/%3E%3Cpath d='M0 5H15' stroke='%239BF449'/%3E%3Cpath d='M0 9H15' stroke='%239BF449'/%3E%3Cpath d='M0 13H7' stroke='%239BF449'/%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                background-color: transparent;
+              }
+            }
+
+            &__read {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              &::after {
+                content: "";
+                display: block;
+
+                width: 33px;
+                height: 16px;
+
+                background-image: url("data:image/svg+xml,%3Csvg width='33' height='16' viewBox='0 0 33 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 8H31.5' stroke='%239BF449'/%3E%3Cpath d='M25 15L32 8L25 1' stroke='%239BF449'/%3E%3C/svg%3E%0A");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+              }
+            }
+          }
+        }
       }
     }
+  }
+
+  &__new {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: var(--green);
+  }
+
+  &__read {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+
+    font-size: 15px;
+    line-height: 120%;
+    letter-spacing: 0.05em;
+    color: var(--green);
   }
 
   h2 {
