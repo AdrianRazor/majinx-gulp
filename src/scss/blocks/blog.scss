@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 30px;
 
     margin-top: 80px;
@@ -34,7 +35,7 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px 40px;
 
     margin-top: 60px;
@@ -118,6 +119,14 @@
 
     &__btn {
       margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 1099px) {
+  .blog {
+    &__grid {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
